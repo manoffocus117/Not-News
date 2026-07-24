@@ -4,6 +4,17 @@
       themes: light --preferlight;
 }
 
-body {
+@plugin "daisyui/theme" {
+      name: "light";
+      default: true;
+      --color-primary: #403f3f;
+      --color-secondary: #706F6F;
+      --color-base-100 : #F3F3F3;
+      --color-base-200 : #E7E7E7;
+      --color-accent: #D72050;
+      --color-accent-content : #FF8C47;
+}
+
+* {
       font-family: "Poppins", sans-serif;
 }
