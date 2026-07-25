@@ -26,7 +26,7 @@ const Root = () => {
                                     <Categories />
                               </Suspense>
                         </aside>
-                        <section className="col-span-2 bg-base-100">
+                        <section className="col-span-2">
                               {" "}
                               {/* main content */}
                               <h2 className="text-2xl">News Home</h2>
