@@ -6,6 +6,7 @@ import Latest_news from "../components/Latest_news";
 import Navbar from "../components/Navbar";
 import Categories from "../components/Categories";
 import Login_with from "../components/Login_with";
+import Find_us from "../components/Find_us";
 
 const Root = () => {
       return (
@@ -37,6 +38,7 @@ const Root = () => {
                               {/* left side menu / navigation */}
                               <h2 className="text-2xl">Login With</h2>
                               <Login_with />
+                              <Find_us />
                         </aside>
                   </section>
                   <Footer />

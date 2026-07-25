@@ -19,7 +19,7 @@ const News_card = ({ news }) => {
       return (
             <div className="rounded bg-base-100 border border-gray-300">
                   {/* Header */}
-                  <div className="flex justify-between items-center bg-base-200 p-5">
+                  <div className="flex justify-between items-center bg-gray-100 p-5">
                         <div className="flex items-center gap-3">
                               <img
                                     src={author.img}
