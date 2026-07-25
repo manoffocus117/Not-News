@@ -1,6 +1,5 @@
 import React from "react";
 import user from "../assets/user.png";
-import Button from "./Button";
 import { NavLink } from "react-router";
 
 const Navbar = () => {
@@ -15,10 +14,9 @@ const Navbar = () => {
                         <figure>
                               <img src={user} alt="user profile image" />
                         </figure>
-                        <Button
-                              name={"Login"}
-                              class_name={"btn btn-primary px-10 text-base-100"}
-                        />
+                        <button className="btn btn-primary px-10 text-base-100">
+                              Login
+                        </button>
                   </div>
             </nav>
       );

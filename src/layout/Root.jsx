@@ -32,7 +32,7 @@ const Root = () => {
                               <h2 className="text-2xl">News Home</h2>
                               <Outlet />
                         </section>
-                        <aside className="bg-base-200">
+                        <aside className="">
                               {" "}
                               {/* left side menu / navigation */}
                               <h2 className="text-2xl">Login With</h2>
