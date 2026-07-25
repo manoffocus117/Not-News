@@ -15,6 +15,7 @@ const router = createBrowserRouter([
                   {
                         path: "/category/:id",
                         element: <Category_news />,
+                        loader: () => fetch("/news.json"),
                   },
             ],
       },
