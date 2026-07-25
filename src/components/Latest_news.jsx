@@ -1,4 +1,5 @@
 import React from "react";
+import MarqueeText from "react-marquee-text";
 
 const Latest_news = () => {
       return (
@@ -6,7 +7,13 @@ const Latest_news = () => {
                   <span className="bg-accent px-5 py-2 text-white shrink-0">
                         Latest
                   </span>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, doloremque fuga tempora earum similique libero repellat nulla ea sunt, tempore</p>
+                  <MarqueeText direction="right" pauseOnHover={true}>
+                        <p className="mx-5">
+                              Match Highlights: Germany vs Spain — as it
+                              happened ! Match Highlights: Germany vs Spain
+                              as...
+                        </p>
+                  </MarqueeText>
             </div>
       );
 };

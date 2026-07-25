@@ -11,12 +11,17 @@ const Root = () => {
                   <Header />
                   <Latest_news />
                   <Navbar />
-                  <section>
-                        <aside></aside> {/* right side menu / navigation */}
-                        <section>
+                  <section className="w-11/12 mx-auto my-20 grid grid-cols-4 gap-5 items-center">
+                        <aside className="bg-base-200"> {/* right side menu / navigation */}
+                              <h2 className="text-2xl">All Category</h2>
+                        </aside>
+                        <section className="col-span-2 bg-base-100">
+                              <h2 className="text-2xl">News Home</h2>
                               <Outlet />
                         </section>
-                        <aside></aside> {/* left side menu / navigation */}
+                        <aside className="bg-base-200"> {/* left side menu / navigation */}
+                              <h2 className="text-2xl">Login With</h2>
+                        </aside>
                   </section>
                   <Footer />
             </>
