@@ -13,8 +13,10 @@ const Header = () => {
                         <p>
                               <span className="font-semibold text-primary">
                                     {format(new Date(), "EEEE, ")}
-                              </span>{" "}
-                              <span className="font-medium text-secondary">{format(new Date(), "MMMM L, yyyy")}</span>
+                              </span>
+                              <span className="font-medium text-secondary">
+                                    {format(new Date(), "MMMM d, yyyy")}
+                              </span>
                         </p>
                   </div>
             </header>
