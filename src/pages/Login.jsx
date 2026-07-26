@@ -28,7 +28,10 @@ const Login = () => {
                               placeholder="Enter your password"
                         />
                   </div>
-                  <button className="btn btn-primary text-white mt-4 p-7">Login</button>
+                  <a className="link link-hover text-[1rem] text-primary font-medium -mt-4">Forgot password?</a>
+                  <button className="btn btn-primary text-white mt-4 p-7">
+                        Login
+                  </button>
                   <p className="text-[1rem]">
                         Don't Have An Account ?{" "}
                         <Link to={"/auth/register"} className="text-accent">
