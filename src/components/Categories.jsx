@@ -8,8 +8,8 @@ const category_promise = fetch("/categories.json").then((response) =>
 const Categories = () => {
       const categories = use(category_promise);
       return (
-            <div>
-                  <menu className="flex flex-col gap-2 mt-5">
+            <div className="mt-5">
+                  <menu className="flex flex-col gap-2">
                         {categories.map((category) => (
                               <NavLink
                                     key={category.id}

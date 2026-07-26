@@ -51,20 +51,11 @@ const Category_news = () => {
 
       // console.log(category_news)
       return (
-            <>
-                  <h2 className="font-semibold">
-                        Total{" "}
-                        <span className="text-blue-500">
-                              {category_news.length}
-                        </span>{" "}
-                        news found in this category
-                  </h2>
-                  <div className="grid grid-cols-1 gap-5">
-                        {category_news.map((news) => (
-                              <News_card key={news.id} news={news} />
-                        ))}
-                  </div>
-            </>
+            <div className="grid grid-cols-1 gap-5 mt-13">
+                  {category_news.map((news) => (
+                        <News_card key={news.id} news={news} />
+                  ))}
+            </div>
       );
 };
 
