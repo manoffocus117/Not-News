@@ -14,7 +14,7 @@ const Root = () => {
                   <Header />
                   <Latest_news />
                   <Navbar />
-                  <section className="w-11/12 mx-auto my-16 grid grid-cols-4 gap-5">
+                  <section className="w-11/12 mx-auto my-16 grid grid-cols-4 gap-5 h-screen">
                         <aside className="">
                               {" "}
                               {/* right side menu / navigation */}
@@ -27,7 +27,7 @@ const Root = () => {
                                     <Categories />
                               </Suspense>
                         </aside>
-                        <section className="col-span-2">
+                        <section className="col-span-2 overflow-scroll scrollbar-thin">
                               {" "}
                               {/* main content */}
                               <h2 className="text-2xl">News Home</h2>

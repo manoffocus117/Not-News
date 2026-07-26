@@ -2,7 +2,6 @@ import React from "react";
 import facebook from "../assets/fb.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Find_us = () => {
       return (
