@@ -14,7 +14,7 @@ const Root = () => {
                   <Header />
                   <Latest_news />
                   <Navbar />
-                  <section className="w-11/12 mx-auto my-16 grid grid-cols-4 gap-5">
+                  <section className="w-11/12 mx-auto my-10 grid grid-cols-4 gap-5">
                         <aside className="sticky top-5 h-fit">
                               {" "}
                               {/* right side menu / navigation */}
