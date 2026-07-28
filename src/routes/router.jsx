@@ -5,8 +5,14 @@ import Category_news from "../pages/Category_news";
 import Auth from "../layout/Auth";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import About from "./../pages/About";
+import Career from "../pages/Career";
 
 const router = createBrowserRouter([
+      {
+            path: "/*",
+            element: <h1>404 page not found</h1>,
+      },
       {
             path: "/",
             element: <Root />,
@@ -24,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
             path: "/auth",
-            element: <Auth/>,
+            element: <Auth />,
             children: [
                   {
                         path: "/auth/login",
@@ -37,16 +43,12 @@ const router = createBrowserRouter([
             ],
       },
       {
-            path: "/sign-in",
-            element: <h1>this is sign-in page</h1>,
+            path: "/about",
+            element: <About />,
       },
       {
-            path: "/sign-up",
-            element: <h1>this is sign-up page</h1>,
-      },
-      {
-            path: "/*",
-            element: <h1>404 page not found</h1>,
+            path: "/career",
+            element: <Career />,
       },
 ]);
 
