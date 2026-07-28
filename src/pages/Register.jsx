@@ -1,7 +1,12 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { Auth_context } from "../providers/Auth_provider";
 
 const Register = () => {
+      // creating a user with email & password
+      const { create_user, set_user } = use(Auth_context);
+
+      // handle register form
       const handle_register = (event) => {
             // preventing from reload
             event.preventDefault();
@@ -14,6 +19,17 @@ const Register = () => {
             const password = form.password.value;
 
             console.log(name, photo_url, email, password);
+            // calling the create_user function
+            create_user(email, password)
+                  .then((result) => {
+                        const user = result.user;
+                        set_user(user);
+                  })
+                  .catch((error) => {
+                        const error_code = error.code;
+                        const error_message = error.message;
+                        alert(error_code, error_message);
+                  });
       };
 
       return (
