@@ -4,7 +4,19 @@ import { Link, NavLink } from "react-router";
 import { Auth_context } from "../providers/Auth_provider";
 
 const Navbar = () => {
-      const { user } = use(Auth_context);
+      const { user, logout_user } = use(Auth_context);
+      // handle logout
+      const handle_logout = () => {
+            logout_user()
+                  .then(() => {
+                        alert("user logged out");
+                  })
+                  .catch((error) => {
+                        const error_code = error.code;
+                        const error_message = error.message;
+                        alert(error.code, error_message);
+                  });
+      };
       return (
             <nav className="w-11/12 mx-auto py-10 flex items-center justify-between">
                   <menu className="flex items-center gap-10 text-secondary">
@@ -16,12 +28,21 @@ const Navbar = () => {
                         <figure>
                               <img src={profile} alt="user profile image" />
                         </figure>
-                        <Link
-                              to={"/auth/login"}
-                              className="btn btn-primary px-10 text-base-100"
-                        >
-                              Login
-                        </Link>
+                        {user ? (
+                              <button
+                                    onClick={handle_logout}
+                                    className="btn btn-primary px-10 text-base-100"
+                              >
+                                    Log Out
+                              </button>
+                        ) : (
+                              <Link
+                                    to={"/auth/login"}
+                                    className="btn btn-primary px-10 text-base-100"
+                              >
+                                    Login
+                              </Link>
+                        )}
                         <span>{user && user.email}</span>
                   </div>
             </nav>
