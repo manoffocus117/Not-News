@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Latest_news from "../components/Latest_news";
@@ -7,8 +7,11 @@ import Navbar from "../components/Navbar";
 import Categories from "../components/Categories";
 import Login_with from "../components/Login_with";
 import Find_us from "../components/Find_us";
+import Loading from "../components/Loading";
 
 const Root = () => {
+      const { state } = useNavigation();
+
       return (
             <>
                   <Header />
@@ -29,7 +32,7 @@ const Root = () => {
                         </aside>
                         <section className="col-span-2">
                               {/* main content */}
-                              <Outlet />
+                              {state == "loading" ? <Loading /> : <Outlet />}
                         </section>
                         <aside className="sticky top-5 h-fit">
                               {" "}
