@@ -6,9 +6,11 @@ import {
       FaStar,
       FaRegStar,
 } from "react-icons/fa";
+import { Link } from "react-router";
 
 const News_card = ({ news }) => {
-      const { title, author, image_url, details, rating, total_view } = news;
+      const { id, title, author, image_url, details, rating, total_view } =
+            news;
 
       const date = new Date(author.published_date).toLocaleDateString("en-GB", {
             year: "numeric",
@@ -55,9 +57,12 @@ const News_card = ({ news }) => {
 
                         <p className="text-gray-600 mt-5">
                               {details.slice(0, 200)}...
-                              <span className="text-orange-500 font-semibold cursor-pointer ml-1">
+                              <Link
+                                    to={`/news-details/${id}`}
+                                    className="text-orange-500 font-semibold cursor-pointer ml-1"
+                              >
                                     Read More
-                              </span>
+                              </Link>
                         </p>
                   </div>
 
