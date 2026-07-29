@@ -49,7 +49,6 @@ const Category_news = () => {
       //       }
       // }, [news_data, id]);
 
-      // console.log(category_news)
       return (
             <div className="grid grid-cols-1 gap-5 mt-13">
                   {category_news.map((news) => (
