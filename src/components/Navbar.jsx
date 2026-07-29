@@ -24,9 +24,13 @@ const Navbar = () => {
                         <NavLink to={"/about"}>About</NavLink>
                         <NavLink to={"/career"}>Career</NavLink>
                   </menu>
-                  <div className="flex gap-5">
-                        <figure>
-                              <img src={profile} alt="user profile image" />
+                  <div className="flex gap-5 items-center">
+                        <figure className="w-12 h-12">
+                              <img
+                                    src={`${user ? user.photoURL : profile}`}
+                                    alt="user profile image"
+                                    className="w-full h-full object-cover rounded-full"
+                              />
                         </figure>
                         {user ? (
                               <button
@@ -43,7 +47,6 @@ const Navbar = () => {
                                     Login
                               </Link>
                         )}
-                        <span>{user && user.email}</span>
                   </div>
             </nav>
       );

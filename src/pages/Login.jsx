@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { Auth_context } from "../providers/Auth_provider";
 
@@ -7,6 +7,7 @@ const Login = () => {
       const { login_user, set_user } = use(Auth_context);
       const location = useLocation();
       const navigate = useNavigate();
+      const [error, set_error] = useState("");
 
       // handle login
       const handle_login = (event) => {
@@ -24,7 +25,7 @@ const Login = () => {
                   .catch((error) => {
                         const error_code = error.code;
                         const error_message = error.message;
-                        alert(error_code, error_message);
+                        set_error(error_code, error_message);
                   });
       };
       return (
@@ -43,6 +44,7 @@ const Login = () => {
                                     type="email"
                                     className="input w-full p-7 text-[1rem] border-0 outline-none"
                                     placeholder="Enter your email address"
+                                    required
                               />
                         </div>
                         {/* password field */}
@@ -55,12 +57,18 @@ const Login = () => {
                                     type="password"
                                     className="input w-full p-7 text-[1rem] border-0 outline-none"
                                     placeholder="Enter your password"
+                                    required
                               />
                         </div>
                         {/* forget password */}
                         <a className="link link-hover text-[1rem] text-primary font-medium -mt-4">
                               Forgot password?
                         </a>
+                        {error && (
+                              <span className="text-[1rem] text-red-600">
+                                    {error}
+                              </span>
+                        )}
                         {/* submit button */}
                         <button
                               type="submit"

@@ -1,19 +1,33 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { Auth_context } from "../providers/Auth_provider";
 
 const Register = () => {
       // creating a user with email & password
-      const { create_user, set_user } = use(Auth_context);
+      const { create_user, set_user, update_user } = use(Auth_context);
+
+      // navigate to home page
+      const navigate = useNavigate();
+
+      // error handling
+      const [name_error, set_name_error] = useState("");
 
       // handle register form
       const handle_register = (event) => {
             // preventing from reload
             event.preventDefault();
+
             // storing from target
             const form = event.target;
+
             // storing form input field value
             const name = form.name.value;
+            if (name.length < 5) {
+                  set_name_error("name should be 5 character");
+                  return;
+            } else {
+                  set_name_error("");
+            }
             const photo_url = form.photo_url.value;
             const email = form.email.value;
             const password = form.password.value;
@@ -23,7 +37,24 @@ const Register = () => {
             create_user(email, password)
                   .then((result) => {
                         const user = result.user;
-                        set_user(user);
+                        update_user({
+                              displayName: name,
+                              photoURL: photo_url,
+                        })
+                              .then(() => {
+                                    set_user({
+                                          ...user,
+                                          displayName: name,
+                                          photoURL: photo_url,
+                                    });
+                                    navigate("/");
+                              })
+                              .catch((error) => {
+                                    const error_code = error.code;
+                                    const error_message = error.message;
+                                    alert(error_code, error_message);
+                                    set_user(user);
+                              });
                   })
                   .catch((error) => {
                         const error_code = error.code;
@@ -50,6 +81,11 @@ const Register = () => {
                                     placeholder="Enter your name"
                                     required
                               />
+                              {name_error && (
+                                    <span className="text-error">
+                                          {name_error}
+                                    </span>
+                              )}
                         </div>
                         {/* photo url field */}
                         <div className="space-y-3">
