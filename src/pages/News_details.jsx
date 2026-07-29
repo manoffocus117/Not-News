@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
+import Navbar from "./../components/Navbar";
 import Footer from "../components/Footer";
 import Login_with from "../components/Login_with";
 import Find_us from "../components/Find_us";
@@ -21,6 +22,7 @@ const News_details = () => {
       return (
             <>
                   <Header />
+                  <Navbar />
                   <section className="w-11/12 mx-auto my-10 grid grid-cols-12 gap-5">
                         <div className="gap-5 col-span-9">
                               <h1 className="text-[1.25rem] font-medium mb-5">
